@@ -11,7 +11,7 @@ import bambi as bmb
 import arviz as az
 import pandas as pd
 
-addresses = pd.read_csv('data/addresses.csv')
+addresses = pd.read_csv('dataa/addresses.csv')
 urban_index_county = pd.read_csv('data/urban_index_county.csv')
 pvi_county = pd.read_csv('data/pres_county_pvi_2.csv')
 county_state = pd.read_csv('data/fips-by-state.csv')
@@ -905,7 +905,7 @@ def create_layout(logit_map_fig, logit_plot_fig, logit_calib_fig, linear_map_fig
     State('year-slider', 'value'),
     State('model-data', 'data'),
     State(ThemeSwitchAIO.ids.switch("theme"), "value")
-    )
+)
 def fit_model(btn, toggle, state, preds, train_years, test_year, model_data, theme):
     if "fit-model" == ctx.triggered_id or None == ctx.triggered_id:
         # print("theme variable: ")
@@ -1007,7 +1007,8 @@ def fit_model(btn, toggle, state, preds, train_years, test_year, model_data, the
 
 @dash_app.callback(
     Output('preds-model', 'options'),
-    Input('state-dropdown', 'value')
+    Input('state-dropdown', 'value'),
+    prevent_initial_call=True
 )
 def update_preds(state):
     if state != 'PA':
