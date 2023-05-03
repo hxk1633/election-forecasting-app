@@ -154,8 +154,8 @@ logit_map_fig, logit_plot_fig, logit_calib_fig, linear_map_fig, linear_plot_fig,
 
 dbc_css = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP, dbc_css])
-server = app.server
+dash_app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP, dbc_css])
+app = dash_app.server
 
 theme_switch = ThemeSwitchAIO(
     aio_id="theme", themes=[dbc.themes.BOOTSTRAP, dbc.themes.DARKLY]
@@ -1026,4 +1026,4 @@ def update_preds(state):
     return new_predictor_options
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    dash_app.run_server(debug=True)
