@@ -161,7 +161,7 @@ theme_switch = ThemeSwitchAIO(
     aio_id="theme", themes=[dbc.themes.BOOTSTRAP, dbc.themes.DARKLY]
 )
 
-app.layout = dbc.Container([
+dash_app.layout = dbc.Container([
     dcc.Store(id='model-data'),
     dbc.Row([
         dbc.Col([
@@ -893,7 +893,7 @@ def create_layout(logit_map_fig, logit_plot_fig, logit_calib_fig, linear_map_fig
     print("Finished layout")
     return linear_layout, logit_layout
 
-@app.callback(
+@dash_app.callback(
     Output('linear-layout', 'children'),
     Output('logit-layout', 'children'),
     Output('model-data', 'data'),
@@ -1005,7 +1005,7 @@ def fit_model(btn, toggle, state, preds, train_years, test_year, model_data, the
 
         return linear_layout, logit_layout, model_data
 
-@app.callback(
+@dash_app.callback(
     Output('preds-model', 'options'),
     Input('state-dropdown', 'value')
 )
