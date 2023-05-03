@@ -11,7 +11,7 @@ import bambi as bmb
 import arviz as az
 import pandas as pd
 
-addresses = pd.read_csv('dataa/addresses.csv')
+addresses = pd.read_csv('data/addresses.csv')
 urban_index_county = pd.read_csv('data/urban_index_county.csv')
 pvi_county = pd.read_csv('data/pres_county_pvi_2.csv')
 county_state = pd.read_csv('data/fips-by-state.csv')
