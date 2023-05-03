@@ -469,8 +469,8 @@ def getModelResults(train_data, test_data, logit_formula, linear_formula, preds,
     linear_results = {'map_data': {}}
     logit_model = bmb.Model(logit_formula, train_data, dropna=True, family="bernoulli")
     linear_model = bmb.Model(linear_formula, train_data, dropna=True)
-    logit_fitted = logit_model.fit(draws=5000, chains=2)
-    linear_fitted = linear_model.fit(draws=5000, chains=2)
+    logit_fitted = logit_model.fit(draws=1000, chains=2)
+    linear_fitted = linear_model.fit(draws=1000, chains=2)
 
     if type(preds) != list or len(preds) == 1:
         print("Single predictor")
