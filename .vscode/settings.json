@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/a8e0b824-dd06-4f19-8bb6-304ae54d4e7d/resourceGroups/ElectionForecastingApp_group/providers/Microsoft.Web/sites/ElectionForecastingApp",
-    "appService.deploySubpath": "."
-}
